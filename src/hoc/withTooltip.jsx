@@ -16,7 +16,10 @@ function withTooltip(Comp) {
         render() {
             return (
                 <div onMouseOver={this.mouseOver} onMouseOut={this.mouseOut}>
-                    <Comp showTooltip={this.state.showTooltip} />
+                    <Comp
+                        {...this.props}
+                        showTooltip={this.state.showTooltip}
+                    />
                 </div>
             );
         }
