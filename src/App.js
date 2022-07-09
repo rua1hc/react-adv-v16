@@ -1,6 +1,7 @@
 // import logo from "./logo.svg";
 import "./App.css";
 import Movie from "./hoc/movie";
+import Counter from "./hooks/counter";
 
 function App() {
     return (
@@ -20,7 +21,10 @@ function App() {
         //     </a>
         //   </header>
         // </div>
-        <Movie id={1} />
+        <div>
+            <Movie id={1} />
+            <Counter />
+        </div>
     );
 }
 
