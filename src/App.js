@@ -2,6 +2,7 @@
 import "./App.css";
 import Movie from "./hoc/movie";
 import Counter from "./hooks/counter";
+import Users from "./hooks/Users";
 
 function App() {
     return (
@@ -24,6 +25,7 @@ function App() {
         <div>
             <Movie id={1} />
             <Counter />
+            <Users />
         </div>
     );
 }
