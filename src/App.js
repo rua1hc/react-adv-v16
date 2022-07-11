@@ -36,6 +36,7 @@ import React, { Component } from "react";
 
 import { MoviePage } from "./context/MoviePage";
 import UserContext from "./context/userContext";
+import CartContext from "./context/CartContext";
 
 export default class App extends Component {
     state = {
@@ -51,16 +52,18 @@ export default class App extends Component {
 
     render() {
         return (
-            <UserContext.Provider
-                value={{
-                    currentUser: this.state.currentUser,
-                    onLoggedin: this.handleLogin,
-                }}
-            >
-                <div>
-                    <MoviePage />
-                </div>
-            </UserContext.Provider>
+            <CartContext.Provider value={{ cart: [] }}>
+                <UserContext.Provider
+                    value={{
+                        currentUser: this.state.currentUser,
+                        onLoggedin: this.handleLogin,
+                    }}
+                >
+                    <div>
+                        <MoviePage />
+                    </div>
+                </UserContext.Provider>
+            </CartContext.Provider>
         );
     }
 }
