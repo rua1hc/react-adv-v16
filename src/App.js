@@ -42,9 +42,21 @@ export default class App extends Component {
         currentUser: { name: "rua1hc" },
     };
 
+    handleLogin = (username) => {
+        const nameIsValid = typeof username === "string" ? username : "rua3hc";
+        console.log("Getting data from: " + nameIsValid);
+        const user = { name: nameIsValid };
+        this.setState({ currentUser: user });
+    };
+
     render() {
         return (
-            <UserContext.Provider value={this.state.currentUser}>
+            <UserContext.Provider
+                value={{
+                    currentUser: this.state.currentUser,
+                    onLoggedin: this.handleLogin,
+                }}
+            >
                 <div>
                     <MoviePage />
                 </div>
